@@ -1,0 +1,17 @@
+@font-face {
+  font-family: Gill Sans Nova;
+  src: url('./assets/gill-sans-nova.ttf');
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Gill Sans Nova, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

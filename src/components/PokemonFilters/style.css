@@ -1,0 +1,35 @@
+.type-filters {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  top: 1em;
+  right: 9%;
+  width: 40%;
+}
+
+.type-filters button {
+  text-transform: capitalize;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5em 1em;
+  cursor: pointer;
+  background: #858585;
+  color: white;
+  text-shadow: -1px 0 #303030, 0 1px #303030, 1px 0 #303030, 0 -1px #303030;
+  letter-spacing: 0.04em;
+  font-family: Gill Sans Nova, sans-serif;
+}
+
+.type-filters button:hover {
+  filter: brightness(110%);
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 8em;
+  width: 100%;
+  gap: 0.5em;
+}
