@@ -7,7 +7,7 @@ import Button from '../Button/';
 import './style.css';
 
 function PokemonFilters() {
-  const { pokemonTypes, setFilter } = useContext(PokemonContext);
+  const { pokemonTypes } = useContext(PokemonContext);
 
   return (
     <div className="type-filters">
@@ -16,9 +16,6 @@ function PokemonFilters() {
           <Button key={index}>{type}</Button>
         ))}
       </div>
-      <button className="clear-filters" onClick={() => setFilter('')}>
-        Clear Filters
-      </button>
     </div>
   );
 }

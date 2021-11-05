@@ -9,7 +9,8 @@ import './style.css';
 
 function Button({ children }) {
   const { setFilter, activeFilter } = useContext(PokemonContext);
-
+  
+  const isActive = activeFilter === children;
   const typeColor = typeColors[children];
 
   const buttonStyle = {
@@ -17,13 +18,13 @@ function Button({ children }) {
       typeof typeColor === 'object'
         ? `linear-gradient(to bottom, ${typeColor[0]}, ${typeColor[0]} 50%, ${typeColor[1]} 50%)`
         : typeColor,
-    outline: activeFilter === children ? '2px solid white' : 'none',
+    outline: isActive ? '2px solid white' : 'none',
   };
 
   return (
     <button
       className="type-button"
-      onClick={() => setFilter(children)}
+      onClick={() => isActive ? setFilter('') : setFilter(children)}
       style={buttonStyle}
     >
       {children}
