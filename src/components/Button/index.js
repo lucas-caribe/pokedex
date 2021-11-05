@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import PropTypes from 'prop-types';
+
+import PokemonContext from '../../context/PokemonContext';
 
 import typeColors from '../../typeColors';
 
 import './style.css';
 
-function Button({ children, filterPokemon }) {
+function Button({ children }) {
+  const { setFilter, activeFilter } = useContext(PokemonContext);
+
   const typeColor = typeColors[children];
 
   const buttonStyle = {
@@ -12,17 +17,22 @@ function Button({ children, filterPokemon }) {
       typeof typeColor === 'object'
         ? `linear-gradient(to bottom, ${typeColor[0]}, ${typeColor[0]} 50%, ${typeColor[1]} 50%)`
         : typeColor,
+    outline: activeFilter === children ? '2px solid white' : 'none',
   };
 
   return (
     <button
       className="type-button"
-      onClick={() => filterPokemon(children)}
+      onClick={() => setFilter(children)}
       style={buttonStyle}
     >
       {children}
     </button>
   );
 }
+
+Button.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default Button;
