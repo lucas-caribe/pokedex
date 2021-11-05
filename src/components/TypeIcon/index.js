@@ -16,7 +16,7 @@ function TypeIcon({ type }) {
 
   return (
     <div className="type-icon" style={typeIconStyle}>
-      <img src={`./assets/type-icons/${type}.svg`} alt={type} />
+      <img src={`/pokedex/assets/type-icons/${type}.svg`} alt={type} />
     </div>
   );
 }
