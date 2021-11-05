@@ -12,10 +12,9 @@ function Pokedex() {
     useContext(PokemonContext);
 
   window.onscroll = () => {
-    if (
-      window.innerHeight + document.documentElement.scrollTop ===
-      document.documentElement.offsetHeight
-    ) {
+    const { scrollHeight, scrollTop, clientHeight } = document.documentElement;
+
+    if (scrollHeight - scrollTop === clientHeight) {
       loadMorePokemon();
     }
   };

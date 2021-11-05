@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { useContext } from 'react';
 
-import PokemonProvider from './context/PokemonProvider';
+import PokemonContext from './context/PokemonContext';
 
 import Pokedex from './components/Pokedex/';
 import Header from './components/Header/';
@@ -9,14 +9,14 @@ import Footer from './components/Footer/';
 import './App.css';
 
 function App() {
+  const { isFetching } = useContext(PokemonContext);
+
   return (
-    <PokemonProvider>
-      <div className="App">
-        <Header />
-        <Pokedex />
-        <Footer />
-      </div>
-    </PokemonProvider>
+    <div className="App">
+      {!isFetching && <Header />}
+      <Pokedex />
+      <Footer />
+    </div>
   );
 }
 

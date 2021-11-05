@@ -4,7 +4,7 @@
 import createPokemonObject from '../components/utils/createPokemonObject';
 
 const BASE_URL = 'https://pokeapi.co/api/v2';
-const POKEMON_LIMIT = 20;
+const POKEMON_LIMIT = 50;
 const FIRST_PAGE = `${BASE_URL}/pokemon/?offset=0&limit=${POKEMON_LIMIT}`;
 
 const createPokemonList = async (results) => {
