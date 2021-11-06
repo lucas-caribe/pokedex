@@ -15,3 +15,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+body::-webkit-scrollbar {
+  background-color: #303030;
+  width: 0.5em;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #4b4b4b;
+  border-radius: 50px;
+}
