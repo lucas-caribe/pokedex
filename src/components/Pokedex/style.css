@@ -20,8 +20,18 @@
   left: 50%;
   transform: translateX(-50%);
   bottom: 5em;
+  animation: fade-in 0.8s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
 }
 
 .loading-more img {
   width: 4.5em;
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
