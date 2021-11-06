@@ -8,7 +8,7 @@ import PokemonContext from '../../context/PokemonContext';
 import './style.css';
 
 function Pokedex() {
-  const { isFetching, filteredPokemon, loadMorePokemon } =
+  const { isFetching, filteredPokemon, loadMorePokemon, loadingMore } =
     useContext(PokemonContext);
 
   window.onscroll = () => {
@@ -35,6 +35,11 @@ function Pokedex() {
             <Pokemon key={pokemon.id} pokemon={pokemon} />
           ))}
       </div>
+      {loadingMore && (
+        <div className="loading-more">
+          <img src="/pokedex/assets/loading.gif" alt="loading..." />
+        </div>
+      )}
     </div>
   );
 }

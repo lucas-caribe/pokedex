@@ -18,7 +18,7 @@ function Button({ children }) {
       typeof typeColor === 'object'
         ? `linear-gradient(to bottom, ${typeColor[0]}, ${typeColor[0]} 50%, ${typeColor[1]} 50%)`
         : typeColor,
-    outline: isActive ? '2px solid white' : 'none',
+    outline: isActive ? '2px solid rgb(164, 164, 164)' : 'none',
   };
 
   return (

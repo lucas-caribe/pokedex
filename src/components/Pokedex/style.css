@@ -14,3 +14,14 @@
   justify-content: center;
   flex-grow: 1;
 }
+
+.loading-more {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 5em;
+}
+
+.loading-more img {
+  width: 4.5em;
+}

@@ -12,6 +12,7 @@ const PokemonProvider = ({ children }) => {
   const [filteredPokemon, setFilteredPokemon] = useState([]);
   const [activeFilter, setActiveFilter] = useState('');
   const [isFetching, setIsFetching] = useState(true);
+  const [loadingMore, setLoadingMore] = useState(false);
   const [nextPage, setNextPage] = useState('');
   // const [searchTerm, setSearchTerm] = useState('');
 
@@ -44,9 +45,11 @@ const PokemonProvider = ({ children }) => {
   const setFilter = (filter) => setActiveFilter(filter);
 
   const loadMorePokemon = async () => {
+    setLoadingMore(true);
     const [pokemonData, next] = await fetchPokemon(nextPage);
     setPokemonList([...pokemonList, ...pokemonData]);
     setNextPage(next);
+    setLoadingMore(false);
   };
 
   return (
@@ -57,6 +60,7 @@ const PokemonProvider = ({ children }) => {
         activeFilter,
         pokemonTypes,
         isFetching,
+        loadingMore,
         setFilter,
         loadMorePokemon,
       }}
