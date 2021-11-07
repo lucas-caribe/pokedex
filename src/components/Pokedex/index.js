@@ -8,13 +8,18 @@ import PokemonContext from '../../context/PokemonContext';
 import './style.css';
 
 function Pokedex() {
-  const { isFetching, filteredPokemon, loadMorePokemon, loadingMore } =
-    useContext(PokemonContext);
+  const {
+    isFetching,
+    filteredPokemon,
+    loadMorePokemon,
+    loadingMore,
+    activeFilter,
+  } = useContext(PokemonContext);
 
   window.onscroll = () => {
     const { scrollHeight, scrollTop, clientHeight } = document.documentElement;
 
-    if (scrollHeight - scrollTop === clientHeight) {
+    if (scrollHeight - scrollTop === clientHeight && !activeFilter) {
       loadMorePokemon();
     }
   };
