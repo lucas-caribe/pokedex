@@ -39,6 +39,6 @@
 @media screen and (max-width: 900px) {
   .pokedex {
     padding: 0 0.2em 2em;
-    gap: 0.5em;
+    gap: 0.3em;
   }
 }

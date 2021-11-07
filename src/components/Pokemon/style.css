@@ -70,11 +70,17 @@
   text-transform: capitalize;
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 621px) {
   .card:nth-child(odd):hover {
-    transform: scale(1.3) translateX(40%);
+    transform: scale(1.2) translateX(40%);
   }
   .card:nth-child(even):hover {
-    transform: scale(1.3) translateX(-40%);
+    transform: scale(1.2) translateX(-40%);
+  }
+}
+
+@media screen and (max-width: 740px) {
+  .card:hover {
+    transform: scale(1.2);
   }
 }
