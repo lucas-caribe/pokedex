@@ -69,3 +69,12 @@
 .poke-types {
   text-transform: capitalize;
 }
+
+@media screen and (max-width: 900px) {
+  .card:nth-child(odd):hover {
+    transform: scale(1.3) translateX(40%);
+  }
+  .card:nth-child(even):hover {
+    transform: scale(1.3) translateX(-40%);
+  }
+}

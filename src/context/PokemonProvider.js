@@ -14,7 +14,6 @@ const PokemonProvider = ({ children }) => {
   const [isFetching, setIsFetching] = useState(true);
   const [loadingMore, setLoadingMore] = useState(false);
   const [nextPage, setNextPage] = useState('');
-  // const [searchTerm, setSearchTerm] = useState('');
 
   const pokemonTypes = Object.keys(typeColors);
 
@@ -46,10 +45,13 @@ const PokemonProvider = ({ children }) => {
 
   const loadMorePokemon = async () => {
     setLoadingMore(true);
+    console.log('loading more');
     const [pokemonData, next] = await fetchPokemon(nextPage);
-    setPokemonList([...pokemonList, ...pokemonData]);
-    setNextPage(next);
-    setLoadingMore(false);
+    if (pokemonData) {
+      setPokemonList([...pokemonList, ...pokemonData]);
+      setNextPage(next);
+      setLoadingMore(false);
+    }
   };
 
   return (

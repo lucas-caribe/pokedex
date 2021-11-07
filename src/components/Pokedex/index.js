@@ -16,11 +16,20 @@ function Pokedex() {
     activeFilter,
   } = useContext(PokemonContext);
 
-  window.onscroll = () => {
-    const { scrollHeight, scrollTop, clientHeight } = document.documentElement;
+  let time = null;
 
-    if (scrollHeight - scrollTop === clientHeight && !activeFilter) {
-      loadMorePokemon();
+  window.onscroll = () => {
+    clearTimeout(time);
+
+    if (!isFetching) {
+      time = setTimeout(() => {
+        const { scrollHeight, scrollTop, clientHeight } =
+          document.documentElement;
+
+        if (scrollHeight - scrollTop - 100 <= clientHeight && !activeFilter) {
+          loadMorePokemon();
+        }
+      }, 500);
     }
   };
 

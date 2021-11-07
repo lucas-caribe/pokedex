@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import typeColors from '../../typeColors';
 
@@ -20,5 +21,9 @@ function TypeIcon({ type }) {
     </div>
   );
 }
+
+TypeIcon.propTypes = {
+  type: PropTypes.string.isRequired,
+};
 
 export default TypeIcon;

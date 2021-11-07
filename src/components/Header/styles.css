@@ -8,3 +8,32 @@ header {
 header img {
   width: 13em;
 }
+
+@media screen and (max-width: 1300px) {
+  header {
+    justify-content: center;
+  }
+  
+  header img {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  header {
+    position: relative;
+    justify-content: space-between;
+    padding: 1em;
+  }
+
+  header img {
+    display: initial;
+    width: 8em;
+  }
+
+  .filter-icon {
+    display: initial;
+    color: #ffcb20;
+    font-size: 2em;
+  }
+}

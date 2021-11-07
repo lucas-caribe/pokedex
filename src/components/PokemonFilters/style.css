@@ -25,3 +25,45 @@
   height: 5em;
   gap: 0.5em;
 }
+
+.close-filters {
+  display: none;
+}
+
+.filter-icon {
+  display: none;
+}
+
+@media screen and (max-width: 900px) {
+  .type-filters {
+    top: 0;
+    right: 0;
+    transform: translateX(100%);
+    background: #303030;
+    height: 100vh;
+    position: fixed;
+    z-index: 99;
+    padding: 3em 3em;
+    opacity: 0;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s ease-in-out;
+  }
+
+  .visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .close-filters {
+    display: initial;
+    position: absolute;
+    top: 0;
+    left: 0.2em;
+    font-size: 2.5em;
+    color: #ffcb20;
+  }
+
+  .buttons {
+    grid-template-columns: 1fr 1fr;
+  }
+}

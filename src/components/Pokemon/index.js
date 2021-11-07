@@ -1,16 +1,11 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import TypeIcon from '../TypeIcon';
 
 import typeColors from '../../typeColors';
 
 import './style.css';
-
-// attack,
-// defense,
-// specialAttack,
-// specialDefense,
-// speed,
 
 function Pokemon({ pokemon }) {
   const { name, types, averageWeight, averageHeight, sprite, hp } = pokemon;
@@ -62,5 +57,16 @@ function Pokemon({ pokemon }) {
     </div>
   );
 }
+
+Pokemon.propTypes = {
+  pokemon: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    types: PropTypes.array.isRequired,
+    averageWeight: PropTypes.object.isRequired,
+    averageHeight: PropTypes.object.isRequired,
+    sprite: PropTypes.string.isRequired,
+    hp: PropTypes.number.isRequired,
+  }).isRequired,
+};
 
 export default Pokemon;
