@@ -5,7 +5,7 @@ import './style.css';
 function LoadingScreen() {
   return (
     <div className="loading-container">
-      <img src="/pokedex/assets/loading.gif" alt="Pikachu" style={{ width: '20em' }} />
+      <img src="/pokedex/assets/loading.gif" alt="Pikachu" />
       <p>
         Loading
         <span>.</span>

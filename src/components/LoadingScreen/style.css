@@ -6,6 +6,10 @@
   gap: 2em;
 }
 
+.loading-container img {
+  width: 20em;
+}
+
 .loading-container span {
   animation: 3s loading infinite;
   visibility: hidden;
@@ -25,5 +29,11 @@
   }
   50% {
     visibility: hidden;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .loading-container img {
+    width: 15em;
   }
 }
