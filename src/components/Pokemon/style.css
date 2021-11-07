@@ -70,6 +70,12 @@
   text-transform: capitalize;
 }
 
+@media screen and (max-width: 740px) {
+  .card:hover {
+    transform: scale(1.2);
+  }
+}
+
 @media screen and (max-width: 621px) {
   .card:nth-child(odd):hover {
     transform: scale(1.2) translateX(40%);
@@ -79,8 +85,39 @@
   }
 }
 
-@media screen and (max-width: 740px) {
-  .card:hover {
-    transform: scale(1.2);
+@media screen and (max-width: 450px) {
+  .card {
+    font-size: 0.45em;
+  }
+
+  .poke-image {
+    width: 13em;
+    padding-bottom: 1em;
+  }
+
+  .poke-info {
+    font-size: 0.35rem;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .card {
+    font-size: 0.35em;
+  }
+
+  .card:nth-child(odd):hover {
+    transform: scale(1.7) translateX(25%);
+  }
+  .card:nth-child(even):hover {
+    transform: scale(1.7) translateX(-25%);
+  }
+
+  .poke-image {
+    width: 13em;
+    padding-bottom: 1.5em;
+  }
+
+  .poke-info {
+    font-size: 0.3rem;
   }
 }

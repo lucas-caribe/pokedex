@@ -47,7 +47,7 @@ function Pokemon({ pokemon }) {
               ? `Type: ${types[0]}`
               : `Types: ${types.join(' | ')}`}
           </p>
-          <p>
+          <p className="poke-info">
             Average Height: {averageHeight.value}{' '}
             {averageHeight.measurementUnit} | Average Weight:{' '}
             {averageWeight.value} {averageWeight.measurementUnit}
