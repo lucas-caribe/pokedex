@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 
 import Pokemon from '../Pokemon';
-import LoadingScreen from '../LoadingScreen';
+import LoadingPikachu from '../LoadingPikachu';
 
 import PokemonContext from '../../context/PokemonContext';
 
@@ -36,7 +36,7 @@ function Pokedex() {
   if (isFetching) {
     return (
       <div className="main-content">
-        <LoadingScreen />
+        <LoadingPikachu />
       </div>
     );
   }
@@ -54,8 +54,7 @@ function Pokedex() {
       </div>
       {loadingMore && (
         <div className="loading-more">
-          <img src="/pokedex/assets/loading.gif" alt="loading..." />
-          <span>Loading...</span>
+          <LoadingPikachu />
         </div>
       )}
     </div>

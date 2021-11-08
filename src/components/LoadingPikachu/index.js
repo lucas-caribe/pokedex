@@ -2,7 +2,7 @@ import React from 'react';
 
 import './style.css';
 
-function LoadingScreen() {
+function LoadingPikachu() {
   return (
     <div className="loading-container">
       <img src="/pokedex/assets/loading.gif" alt="Pikachu" />
@@ -16,4 +16,4 @@ function LoadingScreen() {
   );
 }
 
-export default LoadingScreen;
+export default LoadingPikachu;

@@ -2,21 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import typeColors from '../../typeColors';
+import getColors from '../utils/getColors';
 
 import './style.css';
 
 function TypeIcon({ type }) {
-  const typeColor =
-    typeof typeColors[type] === 'object'
-      ? typeColors[type][0]
-      : typeColors[type];
-
-  const typeIconStyle = {
-    background: typeColor,
-  };
+  const [mainColor] = getColors(typeColors[type]);
 
   return (
-    <div className="type-icon" style={typeIconStyle}>
+    <div className="type-icon" style={{ background: mainColor }}>
       <img src={`/pokedex/assets/type-icons/${type}.svg`} alt={type} />
     </div>
   );

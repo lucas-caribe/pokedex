@@ -4,25 +4,24 @@ import PropTypes from 'prop-types';
 import TypeIcon from '../TypeIcon';
 
 import typeColors from '../../typeColors';
+import makeGradient from '../utils/makeGradient';
+import getColors from '../utils/getColors';
 
 import './style.css';
 
 function Pokemon({ pokemon }) {
   const { name, types, averageWeight, averageHeight, sprite, hp } = pokemon;
 
-  const typeColor = typeColors[types[0]];
+  const [mainColor, secondaryColor] = getColors(typeColors[types[0]]);
 
   const cardStyle = {
-    background:
-      typeof typeColor === 'object'
-        ? `linear-gradient(to bottom, ${typeColor[0]}, ${typeColor[0]} 50%, ${typeColor[1]} 50%)`
-        : typeColor,
+    background: secondaryColor
+      ? makeGradient(mainColor, secondaryColor)
+      : mainColor,
   };
 
   const cardBodyStyle = {
-    background: `no-repeat #fff linear-gradient(to bottom, ${
-      typeof typeColor === 'object' ? typeColor[0] : typeColor
-    } 5%, #FFFFFF) top`,
+    background: `no-repeat #fff linear-gradient(to bottom, ${mainColor} 5%, #FFFFFF) top`,
   };
 
   return (
