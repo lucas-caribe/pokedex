@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import TypeIcon from '../TypeIcon';
 
 import typeColors from '../../typeColors';
-import makeGradient from '../utils/makeGradient';
-import getColors from '../utils/getColors';
+import makeGradient from '../../utils/makeGradient';
+import getColors from '../../utils/getColors';
 
 import './style.css';
 

@@ -1,7 +1,7 @@
 // offset - https://pokeapi.co/api/v2/pokemon/?offset=0&limit=20
 // by type - https://pokeapi.co/api/v2/type/{name or id}/
 
-import createPokemonObject from '../components/utils/createPokemonObject';
+import createPokemonObject from '../utils/createPokemonObject';
 
 const BASE_URL = 'https://pokeapi.co/api/v2';
 const POKEMON_LIMIT = 50;
